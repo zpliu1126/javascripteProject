@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>图片左右切换</title>
+	<link rel="stylesheet" href="">
+</head>
+<!-- 设置样式 -->
+<style>
+	*{
+		margin:0;
+		padding: 0;
+	}
+	.box{
+		/* 这个框架的设计 */
+		margin-top: 100px; 
+		width: 100%;
+		height: 600px;
+		position: relative;
+	}
+	.list{
+		width: 1200px;
+		height: 500px;
+		/* 超出部分不可见 */
+		overflow: hidden;
+		position: absolute;
+		left: 50%;
+		/* 边框位置 */
+		margin-left: -600px;
+	}
+	.btn{
+		position: absolute;
+		top: 50%;
+		margin-top: -50px;
+		width: 60px;
+		height: 100px;
+		line-height: 100px;
+		font-size: 30px;
+		color: white;
+		text-decoration: none;
+		text-align: center;
+		background:rgba(0,255,0,.5);
+		/* 改变鼠标类型 */
+		cursor:pointer;
+	}
+	.next{
+		/* 右边贴近窗口 */
+		right:0;
+	}
+	li{
+		position: absolute;
+		top: 20%;
+		left: 0;
+		/* 将类别标记设置为空 */
+		list-style: none;
+		/* 完全透明,隐藏图片 */
+		opacity: 0;
+		/* 这跟jquery的图片切换有关 */
+		transition: all 0.5s ease-out;
+	}
+	img{
+		width: 800px;
+		height: 400px;
+		border: none;
+		float: left;
+	}
+	.p1{
+		/* 对图片进行3D变换 */
+		transform: translate3d(-200px,0,0) scale(0.81);
+		opacity: 0.8;
+		z-index: 1;
+	}
+	.p2{
+		transform: translate3d(200px,0,0) scale(1);
+		/* 修改坐标的位置x与y轴 */
+		transform-origin: 0 100%;
+		/* 在移动的过程中有一个向下缓冲的过程 */
+		opacity:1;
+		z-index: 2;
+	}
+	.p3{
+		transform: translate3d(600px,0,0) scale(0.81);
+		z-index: 1;
+		opacity: 1;
+	}
+	.p4{
+		transform: translate3d(1000px,0,0) scale(0.81);
+		/* 有3张图片可以轮播就行了，这里为了让它从右边消失 */
+	}
+	.buttons{
+		position: absolute;
+		width: 1200px;
+		height: 30px;
+		bottom: 0px;
+		left: 50%;
+		margin-left: -600px;
+		text-align: center;
+		padding-top: 10px;
+	}
+	.buttons a{
+		display: inline-block;
+		width: 35px;
+		height: 5px;
+		padding-top: 4px;
+		cursor: pointer;
+	}
+	span{
+		display: block;
+		width: 35px;
+		height: 20px;
+		background-color: red;
+	}
+	.blue{
+		background: blue;
+	}
+</style>
+<body>
+<div class="box">
+	<!-- 图片列表 -->
+<div class="list">
+		<ul>
+			<li class="p1"><a href="#"><img src="./image/11.jpg" alt=""></a></li>
+			<li class="p2"><a href="#"><img src="./image/22.jpg" alt=""></a></li>
+			<li class="p3"><a href="#"><img src="./image/33.jpg" alt=""></a></li>
+			<li class="p4"><a href="#"><img src="./image/44.jpg" alt=""></a></li>
+		</ul>		
+</div>
+<!-- 下一张按钮 -->
+<a href="javascripte:" class="pre btn"><</a>
+<a href="javascripte:" class="next btn">></a>
+<!-- 底部显示的状态 -->
+<div class="buttons">
+	<a href="javascripte:"><span class="blue"></span></a>
+	<a href="javascripte:"><span></span></a>
+	<a href="javascripte:"><span></span></a>
+	<a href="javascripte:"><span></span></a>
+</div>
+</div>
+<!-- 加载jquery -->
+<script type="text/javascript" src="https://zpliu1126.github.io/assets/jquery/jquery-3.4.0.min.js"></script>
+
+<script>
+	var $a=$(".buttons a");
+	var $s=$(".buttons span");
+	var cArr=["p1","p2","p3","p4"];
+	/*背景颜色*/
+	var index=0;
+	$(".next").click(
+		function(){
+			nextimg();
+		}
+)
+	$(".pre").click(
+		function(){
+			preimg();
+		})
+/*图片函数*/
+function preimg(){
+	/*把数组最后一个颜色添加到数组开头并且返回新的长度*/
+	cArr.unshift(cArr[3]);
+	cArr.pop();
+	/*jquery中对li进行遍历*/
+	$("li").each(
+		function(i,e){
+			/*i和e代表echo遍历得到的位置信息以及元素e*/
+			/*当遍历第一个li元素时，它将会被打上p4类以此类推*/
+			$(e).removeClass().addClass(cArr[i]);
+		})
+	index--;
+	if (index<0) {index=3;}
+	show();
+}
+function nextimg(){
+	cArr.push(cArr[0]);
+	/*移除第一个元素*/
+	cArr.shift();
+	$("li").each(
+		function(i,e){
+			/*当操作到对应的li元素时*/
+			$(e).removeClass().addClass(cArr[i]);
+		})
+	index++;
+	if(index>3){index=0;}
+	show();
+}
+/*底部btn跟随状态进行显示*/
+$a.each(function(i,e){
+$(e).click(function(){
+/*根据索引重新构造新的数组并且cArr[i]=p2显示图片*/
+/*alert(i);*/
+
+var newArry=[
+["p2","p3","p4","p1"],
+["p1","p2","p3","p4"],
+["p4","p1","p2","p3"],
+["p3","p4","p1","p2"]
+];
+$('li').each(function(j,k){
+$(k).removeClass().addClass(newArry[i][j]);
+index=i;
+})
+show();
+})})
+
+function show(){
+/*获取同胞元素不包括自己*/
+$($s).eq(index).addClass("blue").parent().siblings().children().removeClass("blue");
+}
+
+/*鼠标移入清除定时器*/
+$(".box").mouseover(
+	function(){
+		clearInterval(timer);
+	})
+$(".box").mouseleave(
+	function(){
+		timer=setInterval(nextimg,4000);
+	})
+/*进入页面就开始自动播放*/
+timer=setInterval(nextimg,4000);
+</script>
+</body>
+</html>
