@@ -3,6 +3,7 @@
 >https://github.com/YUUXIAO/webProject
 
 ## 图片的操作
-1. [3Dimage](javascripteProject/image/3Dimage/)
+1. [3Dimage](https://zpliu1126.github.io/javascripteProject/image/3Dimage/)
+2. [图片放大](https://zpliu1126.github.io/javascripteProject/image/album/)
 
 
