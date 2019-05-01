@@ -78,7 +78,7 @@
 				black.style.display="block";
 				big.style.display="block";
 				big.style.left=big.style.top="50%";
-				big.style.marginLeft=-big.offsetWidth/2+"px";
+				big.style.marginLeft=-big.offsetWidth/2+"px"; /*offsetWidth返回只读属性，元素的宽度*/
 				big.style.marginTop=-big.offsetHeight/2+"px";
 				/*要显示的图片*/
 				img.src=src;
