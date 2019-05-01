@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>图片点击查看</title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+	* {
+		margin: 0;padding: 0;
+	}
+	#wrap{
+		width: 1000px;
+		height: 640px;
+		margin: 0 auto;/*左右0上下自适应*/
+	}
+	.images li{
+		box-shadow: 2px 2px 5px #333; /* 阴影参数为偏移位置及模糊距离 */
+		margin: 10px 20px;
+		float: left;
+		list-style: none; /* 消除列表前的符号 */
+		font-size: 0;
+		border-radius: 5px;/* 边框圆角 */
+	}
+	#black{
+		/* 设置背景半透明 */
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: rgba(000,000,000,0.7); /* 具有一定透明度的盒子 */
+		display: none;
+	}
+	#img{
+		width: 100%;
+		height: 100%;
+	}
+	#left,#right{
+	/* 逗号表示并列 */
+	position: absolute;
+	top: 180px;
+	cursor: pointer; /* 鼠标放上去显示手 */
+
+	}
+	#big{ 
+		width: 650px; 
+		height: 406px; 
+		position: absolute;
+		 border: 10px solid #fff; 
+		 display: none;}
+	#left{left:-60px;}
+	#right{right: -60px;}
+	.images img{
+		width: 200px;
+		height: 200px;
+	}
+	</style>
+</head>
+<script>
+	/*当文档加载完毕执行js*/
+	window.onload=function(){
+		var wrap=document.getElementById("wrap");
+		var black=document.getElementById("black");
+		var big=document.getElementById("big");
+		/*当图片放大后的点击事件*/
+		var left=document.getElementById("left");
+		var right=document.getElementById("right");
+		var img=document.getElementById("img");
+		var link=wrap.getElementsByTagName("a");
+		var cur=0;
+		for(var i=0;i<link.length;i++){
+			/*对所有图片编号*/
+			link[i].index=i;
+			link[i].onclick=function(){
+				var src=this.href ;
+				cur=this.index;
+				black.style.display="block";
+				big.style.display="block";
+				big.style.left=big.style.top="50%";
+				big.style.marginLeft=-big.offsetWidth/2+"px";
+				big.style.marginTop=-big.offsetHeight/2+"px";
+				/*要显示的图片*/
+				img.src=src;
+				left.onclick=function(){
+					cur--;
+					if(cur<0){
+						cur=link.length-1;
+					}
+					img.src=link[cur].href
+				}
+				right.onclick=function(){
+					cur++;
+					if(cur>=link.length){
+						cur=0;
+					}
+					img.src=link[cur].href
+				}
+				return false;
+			}
+		}
+			black.onclick=function(){
+				black.style.display="none"
+				big.style.display="none"
+			}
+		}
+
+
+</script>
+
+
+<body>
+	<div id="wrap">
+		<div class="images">
+			<ul>
+				<li><a href="images/a538969f0568d8de77c7e52395af0b7e.jpg"><img src="images/a538969f0568d8de77c7e52395af0b7e.jpg" alt=""></a></li>
+				<li><a href="images/6030122_141005065687_2.jpg"><img src="images/6030122_141005065687_2.jpg" alt=""></a></li>
+				<li><a href="images/7460c844bae4b6c1ee4444d54064d02711d.jpg"><img src="images/7460c844bae4b6c1ee4444d54064d02711d.jpg" alt=""></a></li>
+				<li><a href="images/rainbow-1467988_1920.jpg"><img src="images/rainbow-1467988_1920.jpg" alt=""></a></li>
+			</ul>	
+		</div>
+		<div id="black"></div>
+		<div id="big">
+			<img src="images/dirl.png" alt="" id="left">
+			<img src="images/dirr.png" alt="" id="right">
+			<img src="" alt="" id="img">
+		</div>
+	</div>
+	
+</body>
+</html>
