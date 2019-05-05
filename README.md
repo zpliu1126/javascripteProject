@@ -2,9 +2,11 @@
 QQ：1944532210 备注：javascripteProject
 ## 参考
 - >https://github.com/YUUXIAO/webProject
+- >timeline(https://www.helloweba.net/javascript/285.html)
 
 ## 图片的操作
 - [3Dimage](https://zpliu1126.github.io/javascripteProject/image/3Dimage/)
 - [图片放大](https://zpliu1126.github.io/javascripteProject/image/album/)
 
-
+## 时间轴的实现
+- [timeline](https://zpliu1126.github.io/javascripteProject/timeline/timeline/)
