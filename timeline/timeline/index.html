@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>css实现时间轴</title>
+	<link rel="stylesheet" href="">
+<style type="text/css" media="screen">
+body{
+	width: 80%;
+	margin:0 auto;
+}
+#timeline{
+	position: relative;
+	margin: 15px 0;
+}
+#timeline::before{
+	/* 时间轴 */
+	content: '';
+	position:absolute;
+	top: 0;
+	left: 20px;
+	height: 100%;
+	width:4px;
+	background: #fff;
+	box-shadow: 2px 1px 1px #ddd inset;
+}
+@media only screen and (min-width:900px){
+	#timeline{
+		/* 改变section标签外边距 */
+		margin: 3em 0;
+	}
+	#timeline::before{
+		/* 垂直线居中 */
+		left: 50%;
+		margin-left:-2px;
+	}
+}
+/* 每个内容的位置 */
+.timeline-block{
+	position: relative;
+	margin: 1em 0;
+}
+/* 第一个公告top外边距为0 */
+.timeline-block:first-child{
+	margin-top: 0;
+}
+/* 每个公告之后清除浮动效果 */
+.timeline-block::after{
+	content: '';
+	display: table;
+	clear: both;
+}
+/* 最后一个公告bottom外边距为0 */
+.timeline-block:last-child{
+	margin-bottom: 0;
+}
+@media only screen and (min-width:900px){
+	/* 屏幕大时增加外边距 */
+	.timeline-block{
+		margin: 4em 0;
+	}
+	.timeline-block:first-child{
+	margin-top: 0;
+	}
+	.timeline-block:last-child{
+	margin-bottom: 0;
+	}
+}
+/* 时间轴上的图形 */
+.timeline-block:nth-child(odd) .timeline-img {
+	background-color: #fff;	/* 背景 */
+	border:3px solid #59abe3; /* 设置边框 */
+	border-radius: 50%; /* 设置为圆形 */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:40px;
+	height:40px;
+	font-size: 1.4rem;
+	font-weight: bold;
+	line-height: 40px; /* 行高 */
+	text-align: center;
+	padding-top: 0.001%;
+}
+.timeline-block:nth-child(even) .timeline-img {
+	background-color: #fff;	/* 背景 */
+	border:3px solid #dadfe1; /* 设置边框 */
+	border-radius: 50%; /* 设置为圆形 */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:40px;
+	height:40px;
+	font-size: 1.4rem;
+	font-weight: bold;
+	line-height: 40px; /* 行高 */
+	text-align: center;
+	padding-top: 0.001%;
+}
+@media only screen and (min-width:900px){
+	.timeline-block:nth-child(even) .timeline-img{
+	/* 修改图的大小和居中显示 */
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	left: 45%;
+	margin-left:2.2%;
+	font-size: 1.6rem;
+	font-weight: bold;
+	padding-top: 0.5%;
+	}
+.timeline-block:nth-child(odd) .timeline-img{
+	/* 修改图的大小和居中显示 */
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	left: 45%;
+	margin-left:2.2%;
+	font-size: 1.6rem;
+	font-weight: bold;
+	padding-top: 0.5%;
+	}
+}
+.timeline-content{
+	position: relative;
+	/* 留给图片的位置 */
+	margin-left:60px;
+	background: #fff;
+	padding: 20px;
+	padding-bottom: 50px;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+.timeline-content{
+	content:"";
+	display: table;
+	clear: both;
+}
+.timeline-content h2{
+	color:#303e49;
+	font-size: 1rem;
+}
+.timeline-content p, .timeline-content .read-more, .timeline-content .date {
+  font-size: 13px;
+  font-size: 0.8125rem;
+}
+.timeline-content .read-more, .timeline-content .date {
+	display: inline-block;
+}
+.timeline-content p{
+	margin: 1em 0;
+	line-height: 1.6; /* 行距 */
+}
+.timeline-content .read-more{
+	/* 向右浮动 */
+	float: right;
+	padding:.8em 1em;
+	background: #acb7c0;
+	color:white;
+	border-radius: 0.25em;
+}
+.timeline-content .read-more:hover{
+	/* 鼠标悬浮时特效 */
+	background: #424242;
+}
+.timeline-content .date{
+	float: left;
+	padding:.8em 0;
+	opacity: .7;
+}
+.timeline-content::before {
+	/* 设置前面的三角形 */
+    content: '';
+    position: absolute;
+    top: 16px;
+    right: 100%;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-right: 7px solid #fff;
+}
+@media only screen and (min-width: 768px){
+	/* 小屏幕时修改字体 */
+	.timeline-content h2 {
+    font-size: 20px;
+    font-size: 2rem;
+  }
+  .timeline-content p {
+    font-size: 16px;
+    font-size: 1.2rem;
+  }
+  .timeline-content .read-more, .timeline-content .date {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+@media only screen and (min-width: 900px){
+	.timeline-content{
+		margin-left: 0;
+		padding:1.6em;
+		/* 大屏幕时的屏幕宽度 */
+		width: 43%;
+	}
+	.timeline-content::before{
+		top: 24px;
+		left: 100%;
+		border-color: transparent;
+		border-left-color:white;
+	}
+	.timeline-content .read-more{
+		float:left;
+	}
+	.timeline-block:nth-child(odd) .timeline-content .date{
+		/* 奇数的日期位置 */
+		position: absolute;
+		width: 100%;	
+		left: 118%;
+		top: 1%;
+		font-size: 30px;
+		font-size: 2rem;
+	}
+
+	/* 偶数内容的位置 */
+	.timeline-block:nth-child(even) .timeline-content{
+		float: right;
+	}
+	.timeline-block:nth-child(even) .timeline-content::before{
+	top: 24px;
+    left: auto;
+   	right: 100%;
+    /* 偶数时的边框 */
+    border-color: transparent;
+    border-right-color: white;
+	}
+	.timeline-block:nth-child(even) .timeline-content .read-more{
+		float: right;
+	}	
+	.timeline-block:nth-child(even) .timeline-content .date{
+		
+		/* 文字位置为从右向左，方向为右 */
+		position: absolute;
+		left: -40%;
+		top: 1%;
+		text-align: right;
+		font-size: 16px;
+		font-size: 2rem;
+	}
+}
+.bulletin{
+	margin: 0;
+	padding: 0;
+	background: none;
+	border:0;
+	box-shadow: none;
+}
+
+</style>
+</head>
+<body style="background-color: #f1f1f1;">
+ <section id="timeline">
+ <div class="timeline-block bulletin" id=1;>
+     
+         <div class="timeline-img">
+         	<!-- 显示天 -->
+       		<a href="#">5</a>
+         </div>
+         <div class="timeline-content">
+         <h2 class="entry-title">
+       <a href="#" rel="bookmark">测试标题1</a></h2>
+        <p>
+		文章内容1
+        </p>
+        <a class="read-more" href="#">阅读全文</a>
+        <!-- get_the_date时间函数 -->
+        <span class="date">2019年5月</span>
+        </div>
+    </div>
+  <div class="timeline-block bulletin" id=2;>
+     
+         <div class="timeline-img">
+         	<!-- 显示天 -->
+       		<a href="#">4</a>
+         </div>
+         <div class="timeline-content">
+         <h2 class="entry-title">
+       <a href="#" rel="bookmark">测试标题2</a></h2>
+        <p>
+		文章内容2
+        </p>
+        <a class="read-more" href="#">阅读全文</a>
+        <!-- get_the_date时间函数 -->
+        <span class="date">2019年5月</span>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>
