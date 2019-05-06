@@ -3,6 +3,7 @@ QQ：1944532210 备注：javascripteProject
 ## 参考
 - >https://github.com/YUUXIAO/webProject
 - >timeline(https://www.helloweba.net/javascript/285.html)
+- >渐变色(https://www.bilibili.com/video/av50459771?t=677)
 
 ## 图片的操作
 - [3Dimage](https://zpliu1126.github.io/javascripteProject/image/3Dimage/)
