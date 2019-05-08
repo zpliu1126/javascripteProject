@@ -5,6 +5,7 @@ QQ：1944532210 备注：javascripteProject
 - >timeline(https://www.helloweba.net/javascript/285.html)
 - >渐变色(https://www.bilibili.com/video/av50459771?t=677)
 - >导航栏(https://www.youtube.com/watch?v=8x1mO1d6-4w)
+- >loading(https://www.youtube.com/watch?v=-V4cLuglsUk)
 
 # 演示地址
 ### 图片的操作
