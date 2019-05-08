@@ -7,14 +7,16 @@ QQ：1944532210 备注：javascripteProject
 - >导航栏(https://www.youtube.com/watch?v=8x1mO1d6-4w)
 
 # 演示地址
-## 图片的操作
+### 图片的操作
 - [3Dimage](https://zpliu1126.github.io/javascripteProject/image/3Dimage/)
 - [图片放大](https://zpliu1126.github.io/javascripteProject/image/album/)
 
 # CSS相关操作
-## 时间轴的实现
+### 时间轴的实现
 - [timeline](https://zpliu1126.github.io/javascripteProject/timeline/timeline/)
-## 背景渐变色
+### 背景渐变色
 - [linear_gradient](https://zpliu1126.github.io/javascripteProject/css/linear_gradient/)
-## 导航栏实现
+### 导航栏实现
 - [Navigation Bar](https://zpliu1126.github.io/javascripteProject/css/NavigationBar/)
+### 加载动画
+- [loading](https://zpliu1126.github.io/javascripteProject/css/loading/)
