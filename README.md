@@ -6,6 +6,7 @@ QQ：1944532210 备注：javascripteProject
 - >渐变色(https://www.bilibili.com/video/av50459771?t=677)
 - >导航栏(https://www.youtube.com/watch?v=8x1mO1d6-4w)
 - >loading(https://www.youtube.com/watch?v=lQxt6TdzsAo)
+- >表单(https://www.youtube.com/watch?v=l_Z3N3etkS0)
 
 # 演示地址
 ### 图片的操作
