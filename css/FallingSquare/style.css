@@ -1,0 +1,72 @@
+body{
+	margin: 0;
+	padding:0;
+	overflow-y: hidden;
+	background: url("./bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.content{
+/* 	z-index: -1;
+position: absolute;
+top: 30%;
+right:10%;
+width: 400px;
+border-radius: 2px; */
+	display: none;
+}
+/* 练习响应式布局 */
+@media screen and (min-width: 800px) {
+	body{
+		background-size: contain;
+	}
+.content{
+	z-index: -1;
+	position: absolute;
+	top: 30%;
+	right:10%;
+	width: 400px;
+	border-radius: 2px;
+	display: block;
+	padding: 5px 20px;
+	background:linear-gradient(red,#a537fd);
+	/* 定义阴影加颜色和颜色的透明度 */
+	box-shadow: -10px 10px 10px rgba(108, 122, 137, .8);
+	}
+}
+
+
+.container{
+	display: flex;
+	flex-wrap: wrap;
+	padding-right: 0;
+}
+.container span{
+	margin-right: 0;
+	/* 宽度可以放20个，长度可以放10个
+	总共200个 */
+	width: 5%;
+	height: 10vh;
+	background: #f1f1f1;
+	/* border:0.1px solid rgba(0,0,0,.2); */
+	/* box-sizing: border-box; */
+	/* box-shadow: 0 2px 5px rgba(0,0,0,1); */
+}
+span.fall{
+	z-index: 1000;
+	background:#db0a5b;
+	transition: 0.2s;
+	pointer-events: none;
+	animation:fall 2s linear forwards;
+
+}
+@keyframes fall{
+	0%{
+		transform: translateY(0) rotate(0deg);
+		
+	}	
+	100%{
+		transform: translateY(2000px); rotate(0deg);
+
+	}
+}
