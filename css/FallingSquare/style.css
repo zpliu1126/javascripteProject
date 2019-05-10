@@ -56,14 +56,16 @@ span.fall{
 	z-index: 1000;
 	background:#db0a5b;
 	transition: 0.2s;
+	/* 过度属性 */
 	pointer-events: none;
 	animation:fall 2s linear forwards;
 
 }
 @keyframes fall{
 	0%{
-		transform: translateY(0) rotate(0deg);
-		
+		/* 元素进行转换 */
+		transform: translateY(0) rotate(10deg);
+		/* rotate沿着x轴偏移的角度 */
 	}	
 	100%{
 		transform: translateY(2000px); rotate(0deg);
