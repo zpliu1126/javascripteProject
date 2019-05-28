@@ -7,12 +7,13 @@
 	/* grid-auto-flow: column; */
 	/* 设定div的高度 */
 	grid-template-rows: repeat(3,200px);
-	/* 所有的div相对于container的对齐 */
+	/* 所有的div相对于container的对齐方式 */
 	justify-content: start;
 	/* 当div超出3行3列的范围时，div的高度设定 */
 	grid-auto-rows: 200px;
 
 }
+/* ############定义动作过渡############*/
 .container div{
 	/* height: 200px; */
 	/* grid属性无法继承，所以需要再定义 */
@@ -20,13 +21,15 @@
 	justify-items:center; /* 对齐方式start、end、center、stretch */
 	/* 左对齐、右对齐、居中对齐、两端对齐 */
 	align-items: center;
-	background-color: #c0392b;
 	/* margin: 10px 10px; */
 	font-size: 2rem;
 	/* transition定义过渡效果 */
 	transition: width 2s ease ,height 2s ease , transform 2s;
+	/* 允许单词内进行换行 */
+	word-break: break-all;
 }
 #demo1{
+background-color: #c0392b;
 /* 定义边框位置来对div进行定位 */
 /* 还可以控制宽度和高度 */
 /* grid-column-start: 2;
@@ -36,21 +39,6 @@ grid-row:  2/3; /* 简写方式 */
 /* grid-row-start: 1;
 grid-row-end: 3; */
 }
-#demo1:hover{
-/* 改变宽度与高度 */
-/* grid-column-start: 1;
-grid-column-end: 4;
-grid-row-start: 1;
-grid-row-end: 3; */
-/* 当鼠标悬停就会占满整个屏幕起到突出显示的作用 */
-grid-row:1/6;
-grid-column: 1/4;
-/*width: 100vh;
-height: 100vh; */
-transform: rotate(360deg);
-	/* transform: scale(2,2); */
-	/* css就近原则只有一个transform事件会发生 */
-}
 #demo2{background-color: #2980b9;}
 #demo3{background-color: #2ecc71;}
 #demo4{background-color: #e74c3c;}
@@ -59,3 +47,51 @@ transform: rotate(360deg);
 #demo7{background-color: #1abc9c;}
 #demo8{background-color: #bdc3c7;}
 #demo9{background-color: #2c3e50;}
+
+/* ######定义transform动作########*/
+#demo1:hover{
+/* 改变宽度与高度 */
+/* grid-column-start: 1;
+grid-column-end: 4;
+grid-row-start: 1;
+grid-row-end: 3; */
+/* 当鼠标悬停就会占满整个屏幕起到突出显示的作用 */
+grid-row:2/3;
+grid-column: 2/3;
+/*width: 100vh;
+height: 100vh; */
+/* 设置旋转中心点 */
+/* transform-origin: bottom left; */
+/* transform-origin: 50px 70px; */
+transform: rotate(360deg) scale(2,2);
+	/* transform: scale(2,2); */
+	/* css就近原则只有一个transform事件会发生 */
+}
+#demo2:hover{
+	transform: translate(100px,200px);
+}
+#demo4:hover{
+	transform: translate(-100px,200px);
+}
+#demo3:hover{
+	transform: scale(2,2);
+}
+#demo5:hover{
+	transform: skew(10deg,10deg);
+}
+#demo6:hover{
+	transform: skew(-10deg,-10deg) ;
+}
+#demo7{
+	/* 调整镜头远近 */
+	transform: perspective(-100px);
+}
+#demo8:hover{
+	transform: scale(2,2);
+}
+#demo9:hover{
+	/* 基础的会用就行，matrix的原理的理解可以参考这篇文章
+	https://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-矩阵/ */
+
+	transform: matrix(0,0,0,0,100,100);
+}
