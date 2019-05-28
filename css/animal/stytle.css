@@ -1,0 +1,7 @@
+.container{
+	display: grid;
+	grid-template:500px 500px;
+}
+#demo1{
+	background-color: red;
+}
