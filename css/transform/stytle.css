@@ -1,30 +1,58 @@
 .container{
 	display: grid;
 	/* 定义列宽 */
-	grid-template-columns: repeat(4,25%);
-	/* grid-template-rows: 200px; */
-	/* grid-auto-rows: 200px; */
+	grid-template-columns: repeat(3,33.3%);
+	grid-gap: 10px 10px;
+	/* 设置div按行还是按列排布 */
+	/* grid-auto-flow: column; */
+	/* 设定div的高度 */
+	grid-template-rows: repeat(3,200px);
+	/* 所有的div相对于container的对齐 */
+	justify-content: start;
+	/* 当div超出3行3列的范围时，div的高度设定 */
+	grid-auto-rows: 200px;
+
 }
 .container div{
-	height: 200px;
-	display: inline-grid;
-	justify-items:center;
+	/* height: 200px; */
+	/* grid属性无法继承，所以需要再定义 */
+	display: grid;
+	justify-items:center; /* 对齐方式start、end、center、stretch */
+	/* 左对齐、右对齐、居中对齐、两端对齐 */
 	align-items: center;
-	background-color: red;
-	margin: 10px 10px;
+	background-color: #c0392b;
+	/* margin: 10px 10px; */
 	font-size: 2rem;
-		/* transition定义过渡效果 */
+	/* transition定义过渡效果 */
 	transition: width 2s ease ,height 2s ease , transform 2s;
 }
 #demo1{
 /* 定义边框位置来对div进行定位 */
-	grid-column-start: 2;
-	grid-row-end: 3;
+/* 还可以控制宽度和高度 */
+/* grid-column-start: 2;
+grid-column-end: 4; */
+grid-column:  2/4;
+  grid-row:  2/3; /* 简写方式 */
+/* grid-row-start: 1;
+grid-row-end: 3; */
 }
 #demo1:hover{
-	width: 400px;
-	height: 400px;
-	transform: rotate(360deg);
+/* 改变宽度与高度 */
+/* grid-column-start: 1;
+grid-column-end: 4;
+grid-row-start: 1;
+grid-row-end: 3; */
+width: 50vh;
+height: 50vh;
+transform: rotate(360deg);
 	/* transform: scale(2,2); */
 	/* css就近原则只有一个transform事件会发生 */
 }
+#demo2{background-color: #2980b9;}
+#demo3{background-color: #2ecc71;}
+#demo4{background-color: #e74c3c;}
+#demo5{background-color: #f39c12;}
+#demo6{background-color: #7f8c8d;}
+#demo7{background-color: #1abc9c;}
+#demo8{background-color: #bdc3c7;}
+#demo9{background-color: #2c3e50;}
