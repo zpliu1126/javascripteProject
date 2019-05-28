@@ -1,0 +1,16 @@
+.container div{
+	float: left;
+	width: 200px;
+	height: 200px;
+	background-color: red;
+	margin: 0px 10px;
+	/* transition定义过渡效果 */
+	transition: width 2s ease ,height 2s ease , transform 2s;
+}
+#demo1:hover{
+	width: 400px;
+	height: 400px;
+	transform: rotate(360deg);
+	/* transform: scale(2,2); */
+	/* css就近原则只有一个transform事件会发生 */
+}
