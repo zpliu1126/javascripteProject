@@ -7,7 +7,8 @@ QQ：1944532210 备注：javascripteProject
 - >导航栏(https://www.youtube.com/watch?v=8x1mO1d6-4w)
 - >loading(https://www.youtube.com/watch?v=lQxt6TdzsAo)
 - >表单(https://www.youtube.com/watch?v=l_Z3N3etkS0)
-- >[ 滑块](https://www.bilibili.com/video/av51890017)
+- >[滑块](https://www.bilibili.com/video/av51890017)
+- >[grid布局](http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html)
 
 # 演示地址
 ### 图片的操作
