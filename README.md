@@ -31,3 +31,6 @@ QQ：1944532210 备注：javascripteProject
 - [fallingSquare](https://zpliu1126.github.io/javascripteProject/css/FallingSquare/)
 ### transform与transition的基本用法
 - [transform](https://zpliu1126.github.io/javascripteProject/css/transform)
+### 基于animation的气泡旋转
+
+- [animation](https://zpliu1126.github.io/javascripteProject/css/animal)
