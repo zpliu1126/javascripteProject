@@ -31,8 +31,8 @@
 /* 还可以控制宽度和高度 */
 /* grid-column-start: 2;
 grid-column-end: 4; */
-grid-column:  2/4;
-  grid-row:  2/3; /* 简写方式 */
+grid-column:  2/3;
+grid-row:  2/3; /* 简写方式 */
 /* grid-row-start: 1;
 grid-row-end: 3; */
 }
@@ -42,8 +42,11 @@ grid-row-end: 3; */
 grid-column-end: 4;
 grid-row-start: 1;
 grid-row-end: 3; */
-width: 50vh;
-height: 50vh;
+/* 当鼠标悬停就会占满整个屏幕起到突出显示的作用 */
+grid-row:1/6;
+grid-column: 1/4;
+/*width: 100vh;
+height: 100vh; */
 transform: rotate(360deg);
 	/* transform: scale(2,2); */
 	/* css就近原则只有一个transform事件会发生 */
