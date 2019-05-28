@@ -1,7 +1,42 @@
 .container{
 	display: grid;
-	grid-template:500px 500px;
+	/* div居中对齐 */
+	justify-content: center;
+	grid-template-rows: 100px;
+	grid-template-columns: 100px;
 }
 #demo1{
-	background-color: red;
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	/* background-color: red; */
+	/* 定义圆形当50%以上时候 */
+	border-radius:50%;
+
+}
+#demo1{
+	transform-origin: 100px 100px;
+	animation: myanimal 5s linear 0s infinite alternate;
+}
+@keyframes myanimal{
+	0%{
+		background: linear-gradient(#03A9F4,#E91E63);
+		transform:  rotate(-360deg) ;
+	}
+	25%{
+		background: linear-gradient(#9b59b6,#e67e22);
+		transform:  rotate(360deg) ;
+	}
+	50%{
+		background: linear-gradient(#009432,#ED4C67);
+		transform:  rotate(720deg);
+	}
+	75%{
+		background: linear-gradient(#12CBC4,#A3CB38);
+		transform:   rotate(1080deg);
+	}
+	100%{
+		background: linear-gradient(#03A9F4,#E91E63);
+		transform:  rotate(1440deg);
+	}
 }
