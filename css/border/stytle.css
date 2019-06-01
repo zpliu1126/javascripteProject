@@ -1,0 +1,168 @@
+body{
+	margin: 0;
+	padding:0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: sans-serif;
+	background-color: #06031d;
+
+}
+a{
+	position: relative;
+	padding: 15px 30px;
+	font-size: 4rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	text-decoration: none;
+	color: #fff;
+	box-shadow: 0 0 40px rgba(0,0,0,.5);
+	overflow:hidden;
+}
+a span{
+	/* 使用绝对定位，位置是相对于a标签的 */
+	position: absolute;
+	display: block;
+	background-color: #03a94f;
+}
+a span:nth-child(1){
+	top:0;
+	left:0;
+	width: 2px;
+	height: 100%;
+	transform: translateY(100%);
+}
+a:hover span:nth-child(1){
+transition: 0.5s;
+transform: translateY(-101%);
+}
+a span:nth-child(2){
+	top:0;
+	left:0;
+	width: 100%;
+	height: 2px;
+	transform: translateX(-101%);
+}
+a:hover span:nth-child(2){
+transition: 0.5s;
+transition-delay: 0.5s;
+transform: translateX(101%);
+}
+a span:nth-child(3){
+	top:0;
+	right: 0;
+	width: 2px;
+	height: 100%;
+	transform: translateY(-100%);
+}
+a:hover span:nth-child(3){
+transition: 0.5s;
+transition-delay: 1s;
+transform: translateY(101%);
+}
+a span:nth-child(4){
+	bottom:0;
+	right:0;
+	width: 100%;
+	height: 2px;
+	transform: translateX(101%);
+}
+a:hover span:nth-child(4){
+transition: 0.5s;
+transition-delay: 1.5s;
+transform: translateX(-101%);
+}
+#border{
+	position: relative;
+	height:6rem; 
+	width: 10px;
+	border: 2rem;
+	background-color: red;
+	margin: 20px;
+}
+#animal{
+	position: relative;
+	padding: 15px 30px;
+	font-size: 4rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	text-decoration: none;
+	color: #fff;
+	box-shadow: 0 0 40px rgba(0,0,0,.5);
+	overflow:hidden;
+}
+#animal span{
+	/* 使用绝对定位，位置是相对于a标签的 */
+	position: absolute;
+	display: block;
+	background-color: #03a94f;
+}
+#animal span:nth-child(1){
+	top:0;
+	left:0;
+	width: 2px;
+	height: 100%;
+	transform: translateY(100%);
+	
+}
+#animal span:nth-child(2){
+	top:0;
+	left:0;
+	width: 100%;
+	height: 2px;
+	transform: translateX(-101%);
+}
+#animal span:nth-child(3){
+	top:0;
+	right: 0;
+	width: 2px;
+	height: 100%;
+	transform: translateY(-100%);
+}
+#animal span:nth-child(4){
+	bottom:0;
+	right:0;
+	width: 100%;
+	height: 2px;
+	transform: translateX(101%);
+}
+
+#animal span:nth-child(1){
+	animation: myanimal1 1s linear 0s infinite ;
+}
+#animal span:nth-child(2){
+	animation: myanimal2 1s linear 0s infinite;
+}
+#animal span:nth-child(3){
+	animation: myanimal3 1s linear 0s infinite ;
+}
+#animal span:nth-child(4){
+	animation: myanimal4 1s linear 0s infinite;
+}
+@keyframes myanimal1
+{	
+	100%{
+		/* 这里指的是持续时间 */
+		transform: translateY(-101%);
+	}
+}
+@keyframes myanimal2{
+	100%{
+	
+		transform: translateX(101%);
+	}
+	
+}
+@keyframes myanimal3{
+
+	100%{
+		transform: translateY(101%);
+	}
+}
+@keyframes myanimal4{
+	100%{
+		transform: translateX(-101%);
+	}
+}
