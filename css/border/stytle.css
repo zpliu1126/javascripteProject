@@ -97,15 +97,14 @@ transform: translateX(-101%);
 	/* 使用绝对定位，位置是相对于a标签的 */
 	position: absolute;
 	display: block;
-	background-color: #03a94f;
+	background:linear-gradient(blue,green);
 }
 #animal span:nth-child(1){
 	top:0;
 	left:0;
 	width: 2px;
 	height: 100%;
-	transform: translateY(100%);
-	
+	transform: translateY(100%);	
 }
 #animal span:nth-child(2){
 	top:0;
@@ -141,11 +140,17 @@ transform: translateX(-101%);
 #animal span:nth-child(4){
 	animation: myanimal4 1s linear 1.5s infinite;
 }
+#animal:hover span{
+	background:linear-gradient(red,green);
+	/* 动画暂停 */
+	animation-play-state: paused;
+}
 @keyframes myanimal1
 {
 	100%{
 		/* 这里指的是时间点 */
 		transform: translateY(-101%);
+
 	}
 }
 @keyframes myanimal2{
