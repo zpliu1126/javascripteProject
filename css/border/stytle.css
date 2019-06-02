@@ -133,18 +133,18 @@ transform: translateX(-101%);
 	animation: myanimal1 1s linear 0s infinite ;
 }
 #animal span:nth-child(2){
-	animation: myanimal2 1s linear 0s infinite;
+	animation: myanimal2 1s linear 0.5s infinite;
 }
 #animal span:nth-child(3){
-	animation: myanimal3 1s linear 0s infinite ;
+	animation: myanimal3 1s linear 1s infinite ;
 }
 #animal span:nth-child(4){
-	animation: myanimal4 1s linear 0s infinite;
+	animation: myanimal4 1s linear 1.5s infinite;
 }
 @keyframes myanimal1
-{	
+{
 	100%{
-		/* 这里指的是持续时间 */
+		/* 这里指的是时间点 */
 		transform: translateY(-101%);
 	}
 }
