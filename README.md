@@ -36,3 +36,5 @@ QQ：1944532210 备注：javascripteProject
 - [animation](https://zpliu1126.github.io/javascripteProject/css/animal)
 
 - [border](https://zpliu1126.github.io/javascripteProject/css/border)
+
+- [display](https://zpliu1126.github.io/javascripteProject/css/display)
