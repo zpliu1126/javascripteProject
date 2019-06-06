@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>css布局知识</title>
+	<link rel="stylesheet" href="./stytle.css">
+</head>
+<body>
+	<a href="http://zh.learnlayout.com/">转至</a>
+	<div>
+		标准的块级元素div
+		<ul>
+			<li>form</li>
+			<li>p</li>
+			<li>section</li>
+			<li>header</li>
+		</ul>
+	</div>
+	<div>
+		标准的行内元素span
+		<ul>
+			<li>a</li>
+		</ul>
+	</div>
+	<div>
+		none用于元素的显示和隐藏
+	</div>
+	<div id="display-center">
+		设置元素水平居中
+		<ul>
+			<li>给块级元素一个固定的宽度</li>
+			<li>设置margin的水平外边距为auto</li>
+			<li style="color: red;">唯一的缺点就是当浏览器窗口小于设置的宽度时，下方出现一个水平的滚动条</li>
+		</ul>
+
+		改进版本
+		<ul>
+			<li>固定宽度设置时使用max-width</li>
+			<li>这个参数的修改使得浏览器能够更好的处理小窗口的情况</li>
+		</ul>
+	</div>
+	<div id="box">
+		传统的盒子模型在设置元素宽度之后，在浏览器中元素所展现出来的宽度超出了设置，这是由于内外边距以及边框的存在使得元素变宽
+		<div style="width: 500px;border:1px solid red;">
+			无padding
+		</div>
+		<div style="width: 500px;padding:50px;border:1px solid red;">
+			paddiing:50px;
+		</div>
+		<hr>
+		随后加入看box-sizing:border-box使得边框以及内外边距不再影响盒子的宽度了
+		<div style="width: 500px;box-sizing: border-box;border:1px solid red;">
+			无padding
+		</div>
+		<div style="width: 500px;box-sizing: border-box;padding:50px;border:1px solid red;">
+			paddiing:50px;盒子的宽度时一样大的
+		</div>
+	</div>
+	<div id="position">
+		首先来了解一下position都有哪些属性
+		<ul>
+			<li>默认static,元素不会被定位</li>
+			<li>relative,加上top、right等使得元素偏离原来的正常位置</li>
+			<li>fixed,设置元素相对于视窗来进行定位，也就是me当页面进行滚动，元素还是停留在相同的位置</li>
+			<li>absolute,表现力与fixed类似只不过它相对的不是整个视窗而是离该元素最近的祖先元素；这里的祖先元素是指position不是static的元素</li>
+			<li></li>
+		</ul>
+		<div class="relative">
+			相对定位，没有设置top、right、left、bottom等位置偏离信息
+			<div class="absolute">寻找离它最近的position祖先元素，加上top120px;试一下</div>
+		</div>
+		通过position简单实现一个布局
+		<div class="container">
+			<nav>
+				<ul>
+					<li>home</li>
+					<li>content</li>
+					<li>position</li>
+					<li>contact us</li>
+				</ul>
+			</nav>
+			<section>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</section>
+			<section>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</section>
+		</div>
+<footer>
+	还得考虑留一定的空间给footer,比如设置body的margin-bottom:120px;
+</footer>
+<div id="float">
+	float实现文字环绕特效
+	clear用于控制浮动
+	overflow:auto用于控制浮动中超出的内容
+
+<div style="float: left;width: 200px;height: 100px;margin: 1rem;">
+	漂浮着的浮动框
+</div>
+<section style="margin-left: 0px;clear: left;">
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</section>
+</div>
+<div id="width">
+	百分比宽度在图片的方法与缩小中比较有用，例如在图片中实现放大缩小时，宽度的范围始终是其父元素的百分比	
+</div>
+<div>
+	响应式布局使得网站针对不同的浏览器有呈现不同的显示效果
+	<pre>
+		@media screen and (max-width:599px){
+		nav li {
+		display:inline;
+	}
+	}
+	&ltmeta name="viewport" content="width=device-width,initial-scale=1.0" &gt
+	</pre>
+</div>
+
+<div>
+	column实现多列布局
+	<ul>
+		<li>column-count:2</li>
+		<li>column-gap:1rem</li>
+
+	</ul>
+	<div style="text-align:center;column-count: 3;column-gap: 1rem">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		
+	</div>
+
+</div>
+</div>
+
+</body>
+</html>

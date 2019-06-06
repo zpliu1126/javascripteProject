@@ -1,0 +1,47 @@
+body{
+	margin-bottom: 120px;
+}
+#display-center{
+	width:600px;
+	margin:0 auto;
+}
+.relative{
+	position: relative;
+	width: 600px;
+	height: 400px;
+	box-sizing: border-box;
+	border: 1px solid red;
+}
+.absolute{
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	top: 120px;
+	border:1px solid blue;
+	box-sizing: border-box;
+}
+.container{
+	position: relative;
+	border: 2px solid red;
+}
+nav{
+	position: absolute;
+	left: 0px;
+	width: 200px;
+	border: 2px solid green;
+}
+section{
+	border: 2px solid yellow;
+	margin-left: 200px;
+}
+footer{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 70px;
+	width: 100%;
+	border: 2px solid grey;
+	background-color: white;
+	text-align: center;
+	line-height: 70px;
+}
